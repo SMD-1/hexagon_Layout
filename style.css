@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hexagon {
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+}
+.hexagonCells {
+  flex: 0 1 250px;
+  max-width: 250px;
+  margin: 65px 12px 26px;
+  position: relative;
+  padding: 0.5rem;
+  text-align: center;
+  z-index: 1;
+  background: coral;
+}
+.title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  hyphens: auto;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.75rem;
+  transition: opacity 350ms;
+}
+.hexagonCells::before,
+.hexagonCells::after {
+  content: "";
+  display: block;
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: greenyellow;
+  width: 100%;
+  height: 200%;
+  z-index: -1;
+  /* border: 5px solid #000; */
+}
+.hexagonCells::before {
+  background: #fff;
+  transform: scale(1.05);
+}
+.hexagonCells::after {
+  background: #000;
+  transform: scale(1.05);
+  opacity: 0.7;
+  transition: opacity 350ms;
+}
